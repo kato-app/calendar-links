@@ -17,7 +17,7 @@ use Spatie\CalendarLinks\Exceptions\InvalidLink;
  * @property-read string $address
  * @property-read bool $allDay
  * @property-read array $attendees
- * @property-read string $organiser
+ * @property-read array $organiser
  */
 class Link
 {
@@ -42,7 +42,7 @@ class Link
     /** @var array */
     protected $attendees;
 
-    /** @var string */
+    /** @var array */
     protected $organiser;
 
     public function __construct(string $title, DateTime $from, DateTime $to, bool $allDay = false)
@@ -118,11 +118,11 @@ class Link
     }
 
     /**
-     * @param string $organiser
+     * @param array $organiser
      *
      * @return $this
      */
-    public function organiser(string $organiser)
+    public function organiser(array $organiser)
     {
         $this->organiser = $organiser;
 

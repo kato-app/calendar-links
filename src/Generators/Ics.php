@@ -47,7 +47,7 @@ class Ics implements Generator
         }
         $organiser = $link->organiser;
         if (!empty($organiser)) {
-            $url[] = 'ORGANIZER;CN='.$organiser;
+            $url[] = 'ORGANIZER;CN='.$organiser['name'].':MAILTO:'.$organiser['email'];
         }
 
         $url[] = 'END:VEVENT';
